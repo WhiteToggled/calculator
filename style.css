@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+    -90deg,
+    rgb(67, 67, 82),
+    rgba(0, 0, 0, 0.801)
+  );
+  background-size: 2000px;
+  font-family: "Gotham Rounded", sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.header {
+  padding: 1rem;
+  width: max-content;
+  margin: 0 auto 50px auto;
+  border-radius: 1rem;
+  color: white;
+  border-bottom: 4px solid black;
+  animation-name: subtleShake;
+  animation-duration: 500ms;
+}
+
+.header:active {
+  animation-name: subtleShake;
+  animation-duration: 500ms;
+}
+
+@keyframes subtleShake {
+  10% {
+    transform: rotateZ(1deg) scale(105%);
+  }
+
+  30% {
+    transform: rotateZ(2deg);
+  }
+
+  60% {
+    transform: rotateZ(-2deg);
+  }
+
+  90% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.container {
+  border-radius: 30px;
+  background-color: rgba(128, 128, 128, 0.4);
+  box-shadow: 0px 2px 10px 2px;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 50px auto;
+  animation-name: subtleShake;
+  animation-duration: 500ms;
+}
+.calculator-grid {
+  gap: 20px;
+  padding: 1rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  height: 100px;
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px black;
+}
+
+.calculator-grid > button:hover {
+  background-color: #cacaca;
+}
+
+.calculator-grid > button:active {
+  background-color: #bababa;
+  transform: scale(98%);
+  transition: transform 0.2s easeout;
+}
+.calculator-grid .span-two {
+  color: whitesmoke;
+  background-color: #555;
+  grid-column: span 2;
+}
+
+.calculator-grid .span-two:hover {
+  background-color: #444;
+}
+
+.calculator-grid .span-two:active {
+  background-color: rgb(65, 65, 65);
+}
+
+button[data-operation] {
+  background-color: lightgray;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgb(139, 179, 79);
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(68, 68, 68, 0.8);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  font-size: 2.5rem;
+}
